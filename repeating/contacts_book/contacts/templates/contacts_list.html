@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+
+{% block content %}
+  <h1>Contacts List</h1>
+
+  <!-- Zobrazenie zoznamu kontaktov -->
+  <ul>
+    {% for contact in page_obj %}
+      <li>
+        <a href="{% url 'contact_detail' contact.pk %}">
+          {{ contact.name }} {{ contact.surname }}
+        </a>
+      </li>
+    {% empty %}
+      <p>No contacts found.</p>
+    {% endfor %}
+  </ul>
+
+  <!-- Stránkovacie ovládacie prvky -->
+  <div class="pagination">
+    <span class="step-links">
+      <!-- Odkazy pre prvú a predchádzajúcu stránku -->
+      {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+
+      <!-- Zobrazenie čísiel stránok -->
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <span class="current">{{ num }}</span>  <!-- Aktuálna stránka -->
+        {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+          <a href="?page={{ num }}">{{ num }}</a>  <!-- Ostatné stránky v okolí -->
+        {% endif %}
+      {% endfor %}
+
+      <!-- Odkazy pre ďalšiu a poslednú stránku -->
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+
+Task1:
+vytvorit projekt a v nom dve aplikacie core a contacts
+
+Task2:
+vytvoriť v CORE štrukturu skladanych stranok (base, header, footer, content) na home page, about page
+
+Task2.2:
+vytvoriť v header nabídku na preklikavianie medzi strankami
+
+Task3:
+pridať stranku profilu a funkcionalitu prihlasiť, odhlasit a registraciu
+
+(CONTACTS)
+Task4:
+-> vytvoriť model kontaktu v databaze (obsahuje: meno, cislo, email)
+-> vytvoriť formular a view na pridavanie do databaze
+
+Task4.2:
+-> pridať stránku, kde uvidime výpis vsetkych kontaktov z db (stači vidieť meno)
+-> pridať prekliknutie na detail daneho kontaktu (zobrazenie všetkych info)
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h1>Search Results</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <h2>Results:</h2>
+    <ul>
+        {% for product in results %}
+            <li>{{ product.name }} - {{ product.phone }}</li>
+        {% empty %}
+            <li>No products found</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

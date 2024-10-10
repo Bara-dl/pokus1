@@ -1,0 +1,10 @@
+https://www.w3schools.com/django/index.php
+
+prejdite si nasledujúce sekcie skúste vytvoriť basic stránku a zorientovať sa v súboroch djanga
+
+->Install Django
+->Django Create Project
+->Django Create App
+->Django Views
+->Django URLs
+->Django Templates
